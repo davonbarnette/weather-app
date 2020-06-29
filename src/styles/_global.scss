@@ -1,0 +1,9 @@
+@mixin flex-common($direction, $justify-content, $align-items: initial){
+  display:flex;
+  flex-direction: $direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+$dark-gray: #505050;
+$light-gray: #828282;

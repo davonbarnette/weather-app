@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Forecast Component Snapshot 1`] = `
+<section
+  class="forecast"
+>
+  <div
+    class="chart"
+  >
+    <div
+      id="chart-1"
+      style="height: 300px; line-height: 300px; width: 100%; text-align: center; color: rgb(153, 153, 153); font-size: 14px; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;"
+    >
+      <canvas />
+    </div>
+  </div>
+  <div
+    class="days"
+  >
+    <div
+      class="single-date selected"
+    >
+      <time
+        datetime="1593442800000"
+      >
+        Mon
+      </time>
+      <div
+        class="temps"
+      >
+        <div
+          class="min-temp"
+        >
+          81
+          ℉
+        </div>
+        <div
+          class="max-temp"
+        >
+          81
+          ℉
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;

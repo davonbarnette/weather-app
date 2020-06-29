@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Component Renders Snapshot matches 1`] = `
+<div
+  class="app"
+>
+  <div
+    class="app-content"
+  >
+    <div
+      class="app-content-subtitle"
+    >
+      Welcome To
+    </div>
+    <div
+      class="app-content-title"
+    >
+      Davon's Weather
+    </div>
+    <div
+      class="app-content-description"
+    >
+      <div
+        class="built-with"
+      >
+        This was built with:
+        <ul>
+          <li>
+            React
+          </li>
+          <li>
+            MobX
+          </li>
+        </ul>
+      </div>
+      <div>
+        This app will give you the current weather, and your 5-day forecast as well. If you're running this on the development server, you'll need to create a .env file in your project's root directory that has one entry:
+      </div>
+      <div
+        class="code"
+      >
+        REACT_APP_OPEN_WEATHER_API_KEY=
+        &lt;API Key Here&gt;
+      </div>
+    </div>
+    <button
+      class="get-forecast"
+    >
+      Get Forecast
+    </button>
+  </div>
+</div>
+`;

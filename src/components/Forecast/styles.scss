@@ -1,0 +1,49 @@
+@import "../../styles/global";
+
+.forecast {
+  @include flex-common(column, flex-start, center);
+
+  .chart {
+    @include flex-common(row, flex-start, flex-start);
+    width:100%;
+    margin-bottom:12px;
+  }
+
+  .days {
+    @include flex-common(row, space-between, center);
+    padding:0 12px;
+    width:100%;
+
+    .single-date {
+      @include flex-common(column, center, center);
+      color:$dark-gray;
+      font-weight:600;
+      border: solid 1px #e0e0e0;
+      border-radius:3px;
+      padding:12px;
+      transition:all 0.2s;
+
+      .temps {
+        @include flex-common(row, space-between, center);
+        font-size:13px;
+        font-weight:500;
+        margin-top: 12px;
+        .min-temp {
+          color:$light-gray;
+          margin-right:9px;
+        }
+        .max-temp {
+          color:$dark-gray;
+        }
+      }
+      &:not(.selected):hover {
+        cursor: pointer;
+      }
+
+      &.selected {
+        background:#f3f3f3;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,88 @@
+@import "../../styles/global";
+
+.app {
+
+  @include flex-common(column, center, center);
+  box-sizing: border-box;
+  padding:24px;
+  min-height:100vh;
+
+  &-content {
+    max-width:800px;
+    width:100%;
+
+    .data {
+      margin-top:24px;
+      box-shadow: (0 7px 14px rgba(50, 50, 93, .1), 0 3px 6px rgba(0, 0, 0, .03));
+      border: 1px solid #e0e0e0;
+      border-radius:5px;
+
+      &-title {
+        font-weight:600;
+        color: $dark-gray;
+        margin-bottom: 18px;
+      }
+
+      .current-weather-wrapper {
+        border: 1px solid #e0e0e0;
+        border-style: none none solid none;
+        padding:24px;
+      }
+
+      .forecast-wrapper {
+        padding:24px;
+      }
+    }
+
+    .get-forecast {
+      padding: 12px 18px;
+      border:none;
+      border-radius:3px;
+      background:#13b369;
+      color:white;
+      font-weight:600;
+      transition: all 0.2s;
+      outline:none;
+      &:not(.loading):hover {
+        cursor: pointer;
+        transform: translate(0, -3px);
+      }
+      &.loading {
+        background:#8e8e8e;
+      }
+      &:active {
+        border:none;
+      }
+    }
+
+    &-subtitle {
+      text-transform: uppercase;
+      color:$light-gray;
+      font-weight:600;
+      letter-spacing: 0.15em;
+      font-size:13px;
+    }
+    &-title {
+      font-weight:700;
+      color:$dark-gray;
+      font-size:36px;
+      margin-bottom:12px;
+      line-height:1em;
+    }
+    &-description {
+      @include flex-common(column, flex-start, flex-start);
+      font-size:14px;
+      color: $dark-gray;
+      margin-bottom:24px;
+      font-weight:500;
+      .code {
+        padding: 6px 12px;
+        background:#cecece;
+        border-radius:5px;
+        border: 1px solid #9c9c9c;
+        font-weight:600;
+        margin-top:6px;
+      }
+    }
+  }
+}

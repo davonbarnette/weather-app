@@ -1,0 +1,32 @@
+@import "../../styles/global";
+
+.current-weather {
+  @include flex-common(row, space-between, center);
+
+  .details {
+    @include flex-common(column, flex-end, flex-end);
+    font-size:14px;
+    & > time {
+
+      color:$light-gray;
+    }
+    .city {
+      font-weight:600;
+    }
+    .description {
+      @include flex-common(row, flex-start, center);
+      .icon {
+        width:20px;
+        height:20px;
+        margin-right:9px;
+      }
+    }
+  }
+  .temperature{
+    font-size: 55px;
+    color:$dark-gray;
+    margin-right:12px;
+    font-weight:600;
+    line-height:1em;
+  }
+}

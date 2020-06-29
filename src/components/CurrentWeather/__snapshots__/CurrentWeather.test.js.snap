@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Forecast Component Snapshot 1`] = `
+<section
+  class="current-weather"
+>
+  <div
+    class="temperature"
+  >
+    81
+    ℉
+  </div>
+  <div
+    class="details"
+  >
+    <div
+      class="city"
+    >
+      test_city
+    </div>
+    <time
+      datetime="1589373217000"
+    >
+      Wednesday 08:33 AM
+    </time>
+    <div
+      class="description"
+    >
+      <img
+        alt="open-weather-icon"
+        class="icon"
+        src="https://openweathermap.org/img/w/01d.png"
+      />
+      Clear Sky
+    </div>
+  </div>
+</section>
+`;
