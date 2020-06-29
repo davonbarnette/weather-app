@@ -43,7 +43,7 @@ be rendered in more places than just the Forecast section of the app. Furthermor
 testing actually passes, but it `console.error`s with a Chart.js error, since we aren't correctly mocking
 the canvas.
 
-2. The DateTimes are not ideal. Upon finishing most of the functionality of the app, I realized that the
+2. With more time, I'd handle the DateTime discrepancies. Upon finishing most of the functionality of the app, I realized that the
 dates I've received from OpenWeatherMap are in UTC, which is a problem for local weather, as it messes
 up how times are rendered. That's why on the Chart you'll see that it actually starts at 8PM EST (or 12AM UTC).
 Even though I can handle this semi-easily on the frontend, ideally I'd be able to get the correct forecast starting at 12:00AM EST,
