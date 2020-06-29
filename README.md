@@ -1,68 +1,51 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#Davon's Weather App
 
-## Available Scripts
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
 
-In the project directory, you can run:
+## What it does
+The goal of this project is to show you your current local weather and the upcoming 5-day forecast. The
+workflow is as follows:
+1. User lands on home page.
+2. User clicks *Get Forecast* button to get their forecast.
+3. We kick off the Browser's Geolocation API to grab the user's current location.
+4. We send the lat/lon to two OpenWeatherMap API endpoints.
+    * The first to /weather to grab the current weather forecast
+    * The second to /forecast to grab the 5-day forecast
+5. Upon retrieving both calls, it renders the current weather and the 5-day forecast.
+6. User's can click through the days by clicking on the bottom bar with the dates.
 
-### `yarn start`
+## Running the App
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 1. Requirements
+You must have the following installed on your host machine for this project to work:
+* Node.js
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### 2. Installing Dependencies
+In the project's root directory, run `npm install` to install the necessary modules.
 
-### `yarn test`
+### 3. Setting Environment Variables
+Before running this project, you *must* create a `.env` file in the project's root directory. It should
+contain one entry: `REACT_APP_OPEN_WEATHER_API_KEY=REPLACE_WITH_YOUR_API_KEY`. This is to avoid exposing
+your API Key in a public repository.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 4. Running the App
+In the project's root directory, run `npm run start`. You should see the local development running
+on http://localhost:3000.
 
-### `yarn build`
+### 5. Testing the App
+In the project's root directory, run `npm run test`. This will run the Jest test suite.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Caveats and Thoughts
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+1. Ideally, with more time, I'd like to move the 5-day Forecast Chart out of the Forecast component. This
+would be for easier testing (runs on canvas) and it would make more sense to separate out since it could
+be rendered in more places than just the Forecast section of the app. Furthermore, you'll see that the
+testing actually passes, but it `console.error`s with a Chart.js error, since we aren't correctly mocking
+the canvas.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+2. The DateTimes are not ideal. Upon finishing most of the functionality of the app, I realized that the
+dates I've received from OpenWeatherMap are in UTC, which is a problem for local weather, as it messes
+up how times are rendered. That's why on the Chart you'll see that it actually starts at 8PM EST (or 12AM UTC).
+Even though I can handle this semi-easily on the frontend, ideally I'd be able to get the correct forecast starting at 12:00AM EST,
+not 12:00AM UTC. I couldn't find this on OpenWeatherMap's API call but maybe it's buried somewhere in the docs. Instead,
+they provide the timezone offset.

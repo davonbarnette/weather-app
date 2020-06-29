@@ -54,7 +54,7 @@ const App = (props) => {
                     <div>This app will give you the current weather, and your 5-day forecast as well. If you're running
                         this on the development server, you'll need to create a .env file in your project's root directory
                         that has one entry:</div>
-                    <div className='code'>REACT_APP_OPEN_WEATHER_API_KEY={'<API Key Here>'}</div>
+                    <div className='code'>REACT_APP_OPEN_WEATHER_API_KEY=REPLACE_WITH_YOUR_API_KEY</div>
                 </div>
                 <button className={cx('get-forecast', {loading})} onClick={getAllWeather}>
                     {loading ? 'Loading Weather Data...' : 'Get Forecast'}
